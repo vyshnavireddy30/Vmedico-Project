@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>vmedico</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <!-- Bootstrap core CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   
+    </head>
+
+
+
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+        <h2 class="navbar-brand mr-1" >Admin Dashboard</h2>
+        <form  th:action="@{/logout}"  method="POST" class="ml-auto">
+	                           <button type="submit" class="btn btn-danger">Logout</button> 
+                                       </form>
+    </nav>
+
+    <ul class="sidebar navbar-nav bg-dark">
+
+        <li class="nav-item active">
+            <a class="nav-link " th:href="@{/admin/user-details}">
+                <span>User Details</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " th:href="@{/admin/appointments}">
+                <span>Appointments</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " th:href="@{/admin/doctor-details}">
+                <span>Doctor Details</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " th:href="@{/admin/admin-details}">
+                <span>Admin Details</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/admin/edit-my-profile}">
+                <span>My Profile</span>
+            </a>
+        </li>
+    </ul>
+    <div class="data">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Last-seen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="temp : ${user}">
+                    <td th:text="${temp.id}" />
+                    <td th:text="${temp.firstName}" />
+                    <td th:text="${temp.lastName}" />
+                    <td th:text="${temp.email}" />
+                    <td th:text="${temp.gender}" />
+                     <td th:text="${temp.lastseen}" />
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+</body>
+
+</html>
