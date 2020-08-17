@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>vmedico</title>
+    <link rel="stylesheet" href="../css/doctor.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+ <nav class="navbar navbar-expand navbar-dark static-top">
+        
+        <form  th:action="@{/logout}"  method="POST" class="ml-auto">
+	                           <button type="submit" class="btn btn-danger">Logout</button> 
+                                       </form>
+    </nav>
+    <h2>Appointments</h2>
+    <div class="wrapper">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="temp : ${app}">
+                    <td scope="row" th:text="${temp.id}" />
+                    <td th:text="${temp.name}" />
+                    <td th:text="${temp.email}" />
+                    <td th:text="${temp.date}" />
+                    <td th:text="${temp.time}" />
+                    <td th:text="${temp.description}" />
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
