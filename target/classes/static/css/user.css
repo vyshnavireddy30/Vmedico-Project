@@ -1,0 +1,163 @@
+#title {
+    background-color: #52616b;
+    color: white;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+
+h2 {
+    font-family: "Montserrat";
+    font-size: 2.7rem;
+    line-height: 1.5;
+}
+
+.title-section {
+    padding: 1% 7% 7%;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon p {
+    padding-top: 20px;
+    color: white;
+}
+
+.icon i:hover {
+    color: black;
+}
+
+/* navigation bar */
+
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar {
+    padding: 0 0 4.5rem;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: Montserrat-light;
+}
+
+/* download Buttons */
+
+.download-btn {
+    margin: 5% 3% 5% 0;
+}
+
+/* section 2 styling */
+
+.features-section {
+    padding: 3% 10%;
+    text-align: center;
+    position: relative;
+    background-color: white;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: 3%;
+}
+
+p {
+    font-style: Montserrat;
+    color: #8f8f8f;
+}
+
+.coloumn {
+    padding: 5%;
+}
+
+.fas:hover {
+    color: #52616b;
+}
+
+/* testimonials section 3 styling */
+
+#testimonials {
+    text-align: center;
+    background-color: #d4a5a5;
+    color: black;
+}
+
+.carousel-item {
+    padding: 7% 15%;
+}
+
+.testimonials-img {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+/* pricing section */
+
+#pricing {
+    padding: 100px;
+    text-align: center;
+}
+
+.pricing-coloumn {
+    padding: 3% 2%;
+}
+
+/* Bottom section */
+
+#cta {
+    text-align: center;
+    background-color: #52616b;
+    color: white;
+    padding-top: 6%;
+}
+
+.cta-text {
+    font-size: 3rem;
+    padding: 2% 17% 0;
+}
+
+/* footer styling */
+
+#footer {
+    padding: 7% 15%;
+    text-align: center;
+}
+
+.footer-icon {
+    margin: 20px 10px;
+}
+
+.trans {
+    transition: 3s;
+}
+
+
+@media (max-width: 1000px) {
+    #title {
+        text-align: center;
+    }
+
+    .phone-img {
+        position: static;
+        transform: rotate(0);
+    }
+}
