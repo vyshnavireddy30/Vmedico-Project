@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Vmedico</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/confirm.css">
+    <style>
+    body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(../css/loginBG.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+	}
+	.wrapper-item-left {
+    width: 50%;
+    height: 500px;
+    background: url(../css/VMedico.png) 50% 50% no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    border-radius: 10px 0 0 10px;
+	}
+
+
+    </style>
+    <script>
+        function checkPassword(form) {
+            password1 = form.password.value;
+            password2 = form.ConfirmPassword.value;
+            if (password1 != password2) {
+                alert("Password did not match: Please try again...")
+                return false;
+            }
+
+            // If same return True. 
+            else {
+                return true;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper-content">
+            <h4>Set Your Password</h4>
+            <div th:if="${successMessage}" class="alert alert-success"
+        role="alert" th:text="${successMessage} + ' please login'">
+        
+        </div>
+
+      <div th:if="${errorMessage}" class="alert alert-danger"
+        role="alert" th:text=${errorMessage}></div>
+        
+      <div th:if="${invalidToken}" class="alert alert-danger"
+        role="alert" th:text=${invalidToken}></div>
+            <form autocomplete="off" onSubmit="return checkPassword(this)" th:if="!${invalidToken}" id="passwordForm" role="form" action="#" th:object="${setPassword}" th:action="@{/confirm}" method="post">
+                <input type="hidden" name="token" th:value=${confirmationToken}>
+                <div>
+                    <input name="password" type="password" placeholder="Password" required />
+                    <span aria-hidden="true"></span>
+                </div>
+                <div>
+                    <input type="password" placeholder="Confirm Password" name="ConfirmPassword" required/>
+                    </div>
+                <button type="submit">Save </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
