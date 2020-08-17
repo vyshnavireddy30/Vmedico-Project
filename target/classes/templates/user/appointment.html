@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>vmedico appointments page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/25f1564b4d.js" crossorigin="anonymous"></script>
+    <style>
+        #content-wrapper {
+            margin-top: 30px;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div id="content-wrapper">
+        <div class="container-fluid">
+            <div class="card mb-3">
+                <div class=" head card-header">
+                    <h4><span><i class="fas fa-table"></i></span> My Appointments</h4>
+                    <div class="head">
+                     <a th:href="@{/user/index}" class="nav-link">Home</a>
+                    <form th:action="@{/logout}" method="POST">
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" border="">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Description</th>
+                                </tr>
+                            <tbody>
+                                <tr th:each="temp : ${app}">
+                                    <td th:text="${temp.id}" />
+                                    <td th:text="${temp.name}" />
+                                    <td th:text="${temp.email}" />
+                                    <td th:text="${temp.date}" />
+                                    <td th:text="${temp.time}" />
+                                    <td th:text="${temp.description}" />
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Sticky Footer -->
+                </div>
+                <!-- /.content-wrapper -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
