@@ -4,37 +4,41 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Vmedico</title>
+    <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/register.css">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    
     <style>
-    body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    background: url(../css/loginBG.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-	}
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background: url(../css/loginBG.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
 
-	.wrapper-item-left {
-    width: 50%;
-    height: 500px;
-    background: url(../css/VMedico.png) 50% 50% no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    border-radius: 10px 0 0 10px;
-	}
+        .wrapper-item-left {
+            width: 50%;
+            height: 500px;
+            background: url(../css/VMedico.png) 50% 50% no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            border-radius: 10px 0 0 10px;
+        }
 
     </style>
+    <!-- CDN Bootstrap core CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body>
+    <!-- Center box-->
     <div class="wrapper">
+        <!-- Left box-->
         <div class="wrapper-item-left">
         </div>
+        <!-- Right box-->
         <div class="wrapper-item-right">
             <div class="log-in">
                 <form autocomplete="off" action="#" th:action="@{/register}" th:object="${user}" method="post" role="form" data-toggle="validator">
@@ -52,13 +56,11 @@
                     <button type="submit">Register</button>
                 </form>
                 <p>Already have an account? <span> <a th:href="@{/showMyLoginPage}">Log-in</a></span></p>
-                 <div th:if="${confirmationMessage}" class="alert alert-success alrt"
-          role="alert" th:text=${confirmationMessage}></div>
-
-        <div th:if="${alreadyRegisteredMessage}"
-          class="alert alert-danger alrt" role="alert"
-          th:text="${alreadyRegisteredMessage}"></div> 
-            </div>  
+                <!-- Successfull register confirmation message -->
+                <div th:if="${confirmationMessage}" class="alert alert-success alrt" role="alert" th:text=${confirmationMessage}></div>
+                <!-- User already registered alert -->
+                <div th:if="${alreadyRegisteredMessage}" class="alert alert-danger alrt" role="alert" th:text="${alreadyRegisteredMessage}"></div>
+            </div>
         </div>
     </div>
 </body>
