@@ -20,3 +20,19 @@
 - View appointments.
 > Doctor:
 - View appointments.
+
+## Technology Stack
+> FrontEnd
+- Html
+- CSS
+- Javascript
+- Bootstrap
+> Server Side
+- Spring Thymeleaf
+- Spring Web
+- Spring Security
+- Spring starter mail
+> Core platform
+- Java 8
+
+# Screenshots of output are attached in "output-images" folder
