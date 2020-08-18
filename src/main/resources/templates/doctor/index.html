@@ -9,13 +9,13 @@
 </head>
 
 <body>
- <nav class="navbar navbar-expand navbar-dark static-top">
-        
-        <form  th:action="@{/logout}"  method="POST" class="ml-auto">
-	                           <button type="submit" class="btn btn-danger">Logout</button> 
-                                       </form>
-    </nav>
+ 
+<div class="heading">
     <h2>Appointments</h2>
+     <form  th:action="@{/logout}"  method="POST" >
+	                           <button type="submit" class="btn btn-danger">Logout</button> 
+                                       </form>                          
+   </div>
     <div class="wrapper">
         <table class="table">
             <thead class="thead-dark">
