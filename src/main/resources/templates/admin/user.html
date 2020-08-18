@@ -6,23 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>vmedico</title>
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/admin.css">
     <!-- Bootstrap core CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
-
-
 <body>
+    <!-- NavBar -->
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-     	 <h2 class="navbar-brand mr-1" >Admin Dashboard</h2>
-        <form  th:action="@{/logout}"  method="POST" class="ml-auto">
-	                           <button type="submit" class="btn btn-danger">Logout</button> 
-                                       </form>
+        <h2 class="navbar-brand mr-1">Admin Dashboard</h2>
+        <form th:action="@{/logout}" method="POST" class="ml-auto">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
     </nav>
 
+    <!-- Sidebar -->
     <ul class="sidebar navbar-nav bg-dark">
-
         <li class="nav-item active">
             <a class="nav-link " th:href="@{/admin/user-details}">
                 <span>User Details</span>
@@ -50,39 +50,41 @@
         </li>
     </ul>
 
+    <!-- User details table -->
     <div class="data">
-    <div class="container-fluid">
-        <div class="card mb-3">
-            <div class=" head card-header">
-                User Details
-            </div>
-            <div class="card-body">
-                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tbody>
-                    <tr th:each="temp : ${user}">
-                        <td th:text="${temp.id}" />
-                        <td th:text="${temp.firstName}" />
-                        <td th:text="${temp.lastName}" />
-                        <td th:text="${temp.email}" />
-                        <td th:text="${temp.gender}" />
-                    </tr>
-                </tbody>
-        </table>
+        <div class="container-fluid">
+            <div class="card mb-3">
+                <div class=" head card-header">
+                    User Details
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tbody>
+                                <tr th:each="temp : ${user}">
+                                    <td th:text="${temp.id}" />
+                                    <td th:text="${temp.firstName}" />
+                                    <td th:text="${temp.lastName}" />
+                                    <td th:text="${temp.email}" />
+                                    <td th:text="${temp.gender}" />
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-       
-    </div>
+
+    <!-- CDN Bootstrap JS-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 </body>
