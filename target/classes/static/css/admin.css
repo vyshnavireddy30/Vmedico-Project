@@ -28,6 +28,10 @@ ul li {
  ul li:hover {
     background-color: #96bb7c;
 }
+
+.highlight {
+    background-color: #96bb7c;
+
 ul {
     width: 20vw;
     height: 100vh;
