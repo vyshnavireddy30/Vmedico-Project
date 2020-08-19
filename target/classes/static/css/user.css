@@ -1,10 +1,12 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Section1 */
+
 #title {
     background-color: #52616b;
     color: white;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -58,13 +60,7 @@ h2 {
     font-family: Montserrat-light;
 }
 
-/* download Buttons */
-
-.download-btn {
-    margin: 5% 3% 5% 0;
-}
-
-/* section 2 styling */
+/* section 2 */
 
 .features-section {
     padding: 3% 10%;
@@ -92,7 +88,7 @@ p {
     color: #52616b;
 }
 
-/* testimonials section 3 styling */
+/* section 3 */
 
 #testimonials {
     text-align: center;
@@ -110,7 +106,7 @@ p {
     margin: 20px;
 }
 
-/* pricing section */
+/* section 4 Plans */
 
 #pricing {
     padding: 100px;
@@ -121,7 +117,7 @@ p {
     padding: 3% 2%;
 }
 
-/* Bottom section */
+/* Section 5 */
 
 #cta {
     text-align: center;
@@ -135,7 +131,13 @@ p {
     padding: 2% 17% 0;
 }
 
-/* footer styling */
+/* download Buttons */
+.download-btn {
+    margin: 5% 3% 5% 0;
+}
+
+
+/* footer */
 
 #footer {
     padding: 7% 15%;
@@ -150,14 +152,8 @@ p {
     transition: 3s;
 }
 
-
 @media (max-width: 1000px) {
     #title {
         text-align: center;
-    }
-
-    .phone-img {
-        position: static;
-        transform: rotate(0);
     }
 }
