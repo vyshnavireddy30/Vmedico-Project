@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>vmedico appointments page</title>
+    <!-- CDN Bootstrap core CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- CDN Font awsome-->
     <script src="https://kit.fontawesome.com/25f1564b4d.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
     <style>
         #content-wrapper {
             margin-top: 30px;
@@ -22,17 +25,17 @@
 </head>
 
 <body>
-    <!-- Sidebar -->
+    <!-- User appointments table-->
     <div id="content-wrapper">
         <div class="container-fluid">
             <div class="card mb-3">
                 <div class=" head card-header">
                     <h4><span><i class="fas fa-table"></i></span> My Appointments</h4>
                     <div class="head">
-                     <a th:href="@{/user/index}" class="nav-link">Home</a>
-                    <form th:action="@{/logout}" method="POST">
-                        <button type="submit" class="btn btn-danger">Logout</button>
-                    </form>
+                        <a th:href="@{/user/index}" class="nav-link">Home</a>
+                        <form th:action="@{/logout}" method="POST">
+                            <button type="submit" class="btn btn-danger">Logout</button>
+                        </form>
                     </div>
                 </div>
                 <div class="card-body">
@@ -59,9 +62,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <!-- Sticky Footer -->
                 </div>
-                <!-- /.content-wrapper -->
             </div>
         </div>
     </div>
