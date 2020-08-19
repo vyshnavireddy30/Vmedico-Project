@@ -53,6 +53,11 @@
     <!-- Admin details update form -->
     <div class="data">
         <form th:action="@{/admin/update}" th:object="${profile}" method="POST">
+                <input type="hidden" th:field="*{id}" >
+	            <input type="hidden" th:field="*{password}" >
+	            <input type="hidden" th:field="*{enabled}" >
+	            <input type="hidden" th:field="*{role}" >
+	            <input type="hidden" th:field="*{confirmationToken}" >
             <div class="form-group row">
                 <label for="firstname" class="col-sm-2 col-form-label">First Name:</label>
                 <div class="col-sm-4">
